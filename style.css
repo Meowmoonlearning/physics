@@ -1,0 +1,106 @@
+ body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(180deg, #1e3c72, #2a5298);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .panel {
+            flex: 1;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .panel:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        p {
+            font-size: 0.95em;
+            line-height: 1.5;
+            max-width: 90%;
+            margin: 10px auto;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .status {
+            font-size: 0.9em;
+            margin: 10px auto;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            max-width: 90%;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transform: perspective(1000px) rotateX(10deg);
+            transition: transform 0.5s ease;
+        }
+        .controls {
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+        input[type="range"], button {
+            width: 250px;
+            background: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            padding: 8px;
+            border: none;
+            font-size: 0.9em;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+        }
+        input[type="range"]:hover, button:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .panel {
+                height: 50vh;
+                margin: 5px;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            p, .status {
+                font-size: 0.85em;
+            }
+            input[type="range"], button {
+                width: 200px;
+            }
+            canvas {
+                width: 100%;
+                height: auto;
+            }
+        }
